@@ -74,38 +74,42 @@ export default class SpfxReactBootstrapCarousel extends React.Component<
 
   public render(): React.ReactElement<ISpfxReactBootstrapCarouselProps> {
     return (
-      <div className={styles.spfxReactBootstrapCarousel}>
-        {this.state.images.length > 0 ? (
-          <Carousel
-            fade
-            variant="dark"
-            activeIndex={this.state.index}
-            interval={1000}
-            onSelect={this.handleSelect}
-          >
-            {this.state.images.map((image) => {
-              return (
-                <Carousel.Item className={styles.reactBootstrapCarouselContent}>
-                  <img
-                    className="d-block w-100"
-                    src={image.EncodedAbsUrl}
-                    alt={image.Title}
-                  />
-                  <Carousel.Caption>
-                    <h3>{image.Title}</h3>
-                    <p>{image.OData__ExtendedDescription}</p>
-                  </Carousel.Caption>
-                </Carousel.Item>
-              );
-            })}
-          </Carousel>
-        ) : (
-          <p>
-            No images avaiable in the selected library. Please select another
-            library.
-          </p>
-        )}
-      </div>
+      <React.Fragment>
+        <div className={styles.spfxReactBootstrapCarousel}>
+          {this.state.images.length > 0 ? (
+            <Carousel
+              fade
+              variant="dark"
+              activeIndex={this.state.index}
+              interval={1000}
+              onSelect={this.handleSelect}
+            >
+              {this.state.images.map((image) => {
+                return (
+                  <Carousel.Item
+                    className={styles.reactBootstrapCarouselContent}
+                  >
+                    <img
+                      className="d-block w-100"
+                      src={image.EncodedAbsUrl}
+                      alt={image.Title}
+                    />
+                    <Carousel.Caption>
+                      <h3>{image.Title}</h3>
+                      <p>{image.OData__ExtendedDescription}</p>
+                    </Carousel.Caption>
+                  </Carousel.Item>
+                );
+              })}
+            </Carousel>
+          ) : (
+            <p>
+              No images avaiable in the selected library. Please select another
+              library.
+            </p>
+          )}
+        </div>
+      </React.Fragment>
     );
   }
 }
