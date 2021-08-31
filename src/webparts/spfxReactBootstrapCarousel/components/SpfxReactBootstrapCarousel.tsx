@@ -5,8 +5,6 @@ import * as React from "react";
 import styles from "./SpfxReactBootstrapCarousel.module.scss";
 import { ISpfxReactBootstrapCarouselProps } from "./ISpfxReactBootstrapCarouselProps";
 import { ISpfxReactBootstrapCarouselState } from "./ISpfxReactBootstrapCarouselState";
-import { escape } from "@microsoft/sp-lodash-subset";
-import { ImageFit } from "@fluentui/react";
 import { sp } from "@pnp/sp/presets/all";
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
