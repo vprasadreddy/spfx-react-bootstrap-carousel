@@ -102,8 +102,7 @@ export default class SpfxReactBootstrapCarousel extends React.Component<
             </Carousel>
           ) : (
             <p>
-              No images avaiable in the selected library. Please select another
-              library.
+              Please select a library.
             </p>
           )}
         </div>
